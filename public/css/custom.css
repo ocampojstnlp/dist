@@ -1,0 +1,12 @@
+#customer-form-creation .fa-spinner {
+    display: none;
+}
+
+#customer-form-creation .btn-success {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 190px;
+    gap: 10px;
+}
