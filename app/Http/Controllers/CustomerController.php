@@ -40,6 +40,7 @@ class CustomerController extends Controller
 
         // dd($request);
 
+        sleep(5);
 
         $validator = $request->validate([
             'first_name' => 'required|max:50',
@@ -53,24 +54,28 @@ class CustomerController extends Controller
             // 'others' => 'required'
         ]);
 
+
+        // if ($validator) {
+            $customer = new Customer();
+
+            $customer->first_name = $request->first_name;
+            $customer->last_name = $request->last_name;
+            $customer->email = $request->email;
+            $customer->age = $request->age;
+            $customer->booking_date = $request->booking_date;
+            $customer->amount_to_pay = $request->amount_to_pay;
+            $customer->others = $request->others;
+            $customer->flight_id = $request->flight_id;
+            $customer->flight_class = $request->flight_class;
+
+            $customer->save();
+        // }
+
         
 
-        $customer = new Customer();
-
-        $customer->first_name = $request->first_name;
-        $customer->last_name = $request->last_name;
-        $customer->email = $request->email;
-        $customer->age = $request->age;
-        $customer->booking_date = $request->booking_date;
-        $customer->amount_to_pay = $request->amount_to_pay;
-        $customer->others = $request->others;
-        $customer->flight_id = $request->flight_id;
-        $customer->flight_class = $request->flight_class;
-        
-        $customer->save();
-
-        // dd($request);
-        return back();
+        // if ($validator->fails()) {
+        //     return response()->json(['code' => 401, 'msg' => $validator->errors()->all() ]);
+        // }
 
     }
 

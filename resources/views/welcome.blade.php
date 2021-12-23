@@ -5,7 +5,7 @@
     <div class="container jumbotron">
 
       <div class="col-8 mx-auto">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/" id="customer-form-creation" method="POST" class="" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-6">
@@ -69,7 +69,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                    <button class="btn btn-success"><i class="fa fa-save"></i> <i class="fa fa-spin fa-spinner"></i> Save</button>
                 </div>
             </div>
         </form>
